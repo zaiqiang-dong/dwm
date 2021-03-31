@@ -1566,6 +1566,7 @@ run(void)
 void
 runAutostart(void) {
 	system("~/.config/scripts/dwm-status.sh &");
+	system("~/.config/scripts/dwm-start-tools.sh &");
 }
 
 void
