@@ -12,9 +12,9 @@ print_volume() {
 
 print_mem(){
     memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
-    echo -e "Mem:$memfree m"
+    echo -e "Mem:$memfree"
 }
 
 # datetime
-DateTime=$(date +"+%Y年%m月%d日 %A %T" )
+DateTime=$(date +"%Y年%m月%d日 %A %T" )
 xsetroot -name "$(print_mem) $(print_volume) $DateTime "
