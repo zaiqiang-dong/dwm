@@ -1,4 +1,4 @@
 #!/bin/bash
 # datetime
-DateTime=$(date +"%a %y-%m-%d %T" )
+DateTime=$(date +"%Y-%m-%d %A %T" )
 xsetroot -name "$DateTime"
