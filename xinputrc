@@ -2,3 +2,4 @@
 run_im fcitx
 # im-config signature: c09c766ff363f451b926f9a3fba34440  -
 export _JAVA_AWT_WM_NONREPARENTING=1
+feh --bg-scale /home/$USER/.config/b.jpg
