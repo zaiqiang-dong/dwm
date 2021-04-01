@@ -1,1 +1,2 @@
 flameshot
+xbindkeys

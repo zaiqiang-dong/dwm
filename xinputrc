@@ -1,3 +1,4 @@
 run_im fcitx
 export _JAVA_AWT_WM_NONREPARENTING=1
 feh --bg-scale /home/$USER/.config/b.jpg
+xbindkeys
