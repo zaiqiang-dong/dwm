@@ -9,3 +9,4 @@ cp ./b.jpg ~/.config/b.jpg
 cp ./xbindkeysrc ~/.xbindkeysrc
 rm -rf config.h
 sudo cp ./dwm.desktop /usr/share/xsessions/
+make clean
