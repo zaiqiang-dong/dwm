@@ -20,13 +20,13 @@ print_mem(){
 dwm_loadavg () {
     lf=1,2,3
     la=$(cut -d " " -f ${lf} /proc/loadavg)
-    echo -e "\uFBF2 $la"
+    echo -e "\uFD2E $la"
 
 }
 
 #whether
-whether=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
-whether=`echo -e "\uFA94 $whether"`
+# whether=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
+# whether=`echo -e "\uFA94 $whether"`
 #network
 
 connection=$(nmcli -a | grep 'Wired connection' | awk 'NR==1{print $1}')
@@ -40,4 +40,4 @@ fi
 Date=$(date +"%Y年%m月%d日 %A" )
 Time=$(date +"%T" )
 DateTime=`echo -e "\uF073 $Date \uFBAE $Time"`
-xsetroot -name "$whether $(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection "
+xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection "
