@@ -1,2 +1,2 @@
-flameshot
+#flameshot
 xbindkeys
