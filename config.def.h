@@ -69,14 +69,14 @@ static const char *flameshotcmd[]  = { "flameshot", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = flameshotcmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
+	{ Mod1Mask,                     XK_period, spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_m,      focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      setmfact,       {.f = -0.05} },
-	{ MODKEY|ShiftMask,             XK_k,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_w,      killclient,     {0} },
