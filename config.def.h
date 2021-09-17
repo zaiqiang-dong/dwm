@@ -66,10 +66,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show" , "drun"};
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *flameshotcmd[]  = { "flameshot", NULL };
+static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
+static const char *shutdowncmd[]  = { "shutdown", "now", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ Mod1Mask,                     XK_minus,  spawn,          {.v = shutdowncmd} },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = flameshotcmd } },
 	{ Mod1Mask,                     XK_period, spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
