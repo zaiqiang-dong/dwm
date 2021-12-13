@@ -1,4 +1,7 @@
 #!/bin/bash
+
+parcellite &
+
 while true
 do
     bash ~/.config/scripts/dwm-status-refresh.sh
