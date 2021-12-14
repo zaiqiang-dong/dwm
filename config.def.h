@@ -91,7 +91,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_comma,  focusstack,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  zoom,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  zoom,           {.i = -1 } },
+    /* 移动一个窗口在两个屏幕上 */
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
     { MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	TAGKEYS(                        XK_1,                      0)
