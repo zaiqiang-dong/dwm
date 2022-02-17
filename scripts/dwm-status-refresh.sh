@@ -29,8 +29,8 @@ dwm_loadavg () {
 # whether=`echo -e "\uFA94 $whether"`
 #network
 
-connection=$(nmcli -a | grep 'Wired connection' | awk 'NR==1{print $1}')
-if [ "$connection" = "" ]; then
+connection=$(ping www.baidu.coewm -c 1 && echo "yes" || echo "no")
+if [ "$connection" = "yes" ]; then
     connection=`echo -e "\uF65A"`
 else
     connection=`echo -e "\uFBF1"`
