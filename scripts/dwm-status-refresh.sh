@@ -67,4 +67,4 @@ let Week=Week+1
 Week_index=$(date +"%A")
 Time=$(date +"%T")
 DateTime=`echo -e "\uF073 $Date $Week周 $Week_index \uFBAE $Time"`
-xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $(get_battery_charging_status) $(get_battery_combined_percent) $DateTime $connection "
+xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection $(get_battery_charging_status) $(get_battery_combined_percent)"
