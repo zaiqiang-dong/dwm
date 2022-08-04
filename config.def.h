@@ -64,7 +64,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "rofi", "-no-lazy-grab", "-show" , "drun", "-modi", "run,drun,window", "-theme", "~/.config/rofi/theme/style_7.rasi"};
 static const char *termcmd[]  = { "st", NULL };
-static const char *slockcmd[]  = { "slock", NULL };
+//static const char *slockcmd[]  = { "slock", NULL };
+static const char *slockcmd[]  = { "i3lock", "-c", "000000", "-e" };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 static const char *shutdowncmd[]  = { "shutdown", "now", NULL };
 
