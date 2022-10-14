@@ -11,7 +11,12 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
-static const char *fonts[]          = {"Hack Nerd Font Mono:style=bold:size=13", "Symbola:style=Regular:size=13" };
+/* "WenQuanYi Micro Hei:size=12:style=Bold" */
+static const char *fonts[]          = {
+                                        "Ubuntu Mono:style=Bold"
+                                        "Hack Nerd Font Mono:style=Bold:size=14",
+                                        "Symbola:style=Regular:size=14",
+                                       };
 static const char dmenufont[]       = "Hack Nerd Font Mono:size=13";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
