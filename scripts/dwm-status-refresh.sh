@@ -47,25 +47,6 @@ get_battery_charging_status() {
 	fi
 }
 
-#net
-update() {
-    sum=0
-    for arg; do
-        read -r i < "$arg"
-        sum=$(( sum + i ))
-    done
-    cache=/tmp/${1##*/}
-    [ -f "$cache" ] && read -r old < "$cache" || old=0
-    printf %d\\n "$sum" > "$cache"
-    printf %d\\n $(( sum - old ))
-}
-
-get_net_info() {
-    rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
-    tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
-
-    printf "\uf6d9%4sB \ufa51%4sB\\n" $(numfmt --to=iec $rx $tx)
-}
 
 #whether
 # whether=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
@@ -86,4 +67,4 @@ let Week=Week+1
 Week_index=$(date +"%A")
 Time=$(date +"%T")
 DateTime=`echo -e "\uF073 $Date $Week周 $Week_index \uFBAE $Time"`
-xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection $(get_battery_charging_status) $(get_battery_combined_percent) $(get_net_info)"
+xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection $(get_battery_charging_status) $(get_battery_combined_percent)"
