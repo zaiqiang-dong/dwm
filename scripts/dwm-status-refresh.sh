@@ -47,12 +47,6 @@ get_battery_charging_status() {
 	fi
 }
 
-
-#whether
-# whether=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
-# whether=`echo -e "\uFA94 $whether"`
-#network
-
 connection=$(ping www.baidu.coewm -c 1 && echo "yes" || echo "no")
 if [ "$connection" = "yes" ]; then
     connection=`echo -e "\uF65A"`
@@ -68,3 +62,4 @@ Week_index=$(date +"%A")
 Time=$(date +"%T")
 DateTime=`echo -e "\uF073 $Date $Week周 $Week_index \uFBAE $Time"`
 xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection $(get_battery_charging_status) $(get_battery_combined_percent)"
+
