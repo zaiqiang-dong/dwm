@@ -4,6 +4,7 @@ rm *.orig
 sudo make clean install
 mkdir ~/.config/scripts/
 cp ./scripts/* ~/.config/scripts/
+cp ./xinputrc ~/.xinputrc
 cp ./b.jpg ~/.config/b.jpg
 cp ./picom-config ~/.config/picom-config
 cp ./xbindkeysrc ~/.xbindkeysrc
