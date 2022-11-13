@@ -1,7 +1,7 @@
-"amixer set Master 5+;alsactl --file ~/.config/asound.state store"
+"amixer set Master 1%+;alsactl --file ~/.config/asound.state store"
     m:0x0 + c:123
     XF86AudioRaiseVolume
-"amixer set Master 5-;alsactl --file ~/.config/asound.state store"
+"amixer set Master 1%-;alsactl --file ~/.config/asound.state store"
     m:0x0 + c:122
     XF86AudioLowerVolume
 "amixer set Master 0%;"
