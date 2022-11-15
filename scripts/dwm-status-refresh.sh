@@ -58,8 +58,8 @@ fi
 Date=$(date +"%Y年%m月%d日" )
 Week=$(date +"%V")
 let Week=Week+1
-Week_index=$(date +"%A")
+Week_index=$(date +"%w")
 Time=$(date +"%T")
-DateTime=`echo -e "\uF073 $Date $Week周 $Week_index \uFBAE $Time"`
-xsetroot -name "$(dwm_loadavg) $(print_mem) $(print_volume) $DateTime $connection $(get_battery_charging_status) $(get_battery_combined_percent)"
+DateTime=`echo -e "\uF073 $Date $Week周+$Week_index \uFBAE $Time"`
+xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $DateTime  $connection  $(get_battery_charging_status)  $(get_battery_combined_percent)"
 
