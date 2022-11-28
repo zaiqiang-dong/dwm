@@ -2,3 +2,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xset s off
 xset s noexpose
 xset s noblank
+xset dpms 0 0 0
