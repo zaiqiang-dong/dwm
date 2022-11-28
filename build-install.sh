@@ -4,6 +4,7 @@ rm *.orig
 sudo make clean install
 mkdir ~/.config/scripts/
 cp ./scripts/* ~/.config/scripts/
+sudo cp ./dwm-lock.sh /usr/bin/dwm-lock
 cp ./xprofile ~/.xprofile
 cp ./b.jpg ~/.config/b.jpg
 cp ./picom-config ~/.config/picom-config
