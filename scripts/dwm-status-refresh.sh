@@ -6,7 +6,7 @@ print_volume() {
     then
 	echo -e "\uFA7D ${Volume}"
     else
-	echo -e "Mute"
+	echo -e "\uFA7D Mute"
     fi
 }
 
@@ -65,11 +65,11 @@ get_wireless_signal_strengh() {
 
 
 # datetime
-Date=$(date +"%Y年%m月%d日" )
+Date=$(date +"%Y-%m-%d" )
 Week=$(date +"%V")
 let Week=Week+1
 Week_index=$(date +"%w")
 Time=$(date +"%T")
-DateTime=`echo -e "\uF073 $Date $Week周+$Week_index \uFBAE $Time"`
-xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $DateTime  $(get_wireless_signal_strengh) $(get_battery_charging_status) $(get_battery_combined_percent) "
+DateTime=`echo -e "\uF073 $Date $Week+$Week_index \uFBAE $Time"`
+xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status)  $(get_battery_combined_percent)"
 
