@@ -47,12 +47,22 @@ get_battery_charging_status() {
 	fi
 }
 
-connection=$(ping www.baidu.coewm -c 1 && echo "yes" || echo "no")
-if [ "$connection" = "yes" ]; then
-    connection=`echo -e "\uF65A"`
-else
-    connection=`echo -e "\uFBF1"`
-fi
+get_wireless_signal_strengh() {
+    wire_info=$(ip route get 8.8.8.8 | grep -Po 'dev \K\w+' | grep -qFf - /proc/net/wireless && echo wireless || echo wired)
+    if [ $wire_info=="wireless" ];then
+        signal_strengh=$(cat /proc/net/wireless |tail -1 | tr -s " " | cut -d' ' -f4 | tr -cd "[0-9]")
+        echo -e "\ufb09 -"$signal_strengh
+    else
+        connection=$(ping www.baidu.coewm -c 1 && echo "yes" || echo "no")
+        if [ "$connection" = "yes" ]; then
+            connection=`echo -e "\uF65A"`
+        else
+            connection=`echo -e "\uFBF1"`
+        fi
+        echo $connection
+    fi
+}
+
 
 # datetime
 Date=$(date +"%Y年%m月%d日" )
@@ -61,5 +71,5 @@ let Week=Week+1
 Week_index=$(date +"%w")
 Time=$(date +"%T")
 DateTime=`echo -e "\uF073 $Date $Week周+$Week_index \uFBAE $Time"`
-xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $DateTime  $connection  $(get_battery_charging_status)  $(get_battery_combined_percent)"
+xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $DateTime  $(get_wireless_signal_strengh) $(get_battery_charging_status) $(get_battery_combined_percent) "
 
