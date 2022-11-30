@@ -5,3 +5,4 @@ alsactl --file ~/.config/asound.state restore
 xbindkeys
 blueman-tray
 fcitx5 &
+PigchaProxy &
