@@ -39,7 +39,6 @@ static const Rule rules[] = {
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor */
 	{ "PigchaProxy",    NULL,       NULL,       1 << 5,       0,           0 },
-	{ "D-Chat",         NULL,       NULL,       1 << 5,       0,           0 },
 	{ "Google-chrome",  NULL,       NULL,       1 << 4,       0,           0 },
 };
 
