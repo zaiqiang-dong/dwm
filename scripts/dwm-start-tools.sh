@@ -6,3 +6,5 @@ xbindkeys
 blueman-tray
 fcitx5 &
 PigchaProxy &
+google-chrome &
+d-chat &
