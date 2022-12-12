@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_volume() {
-    Volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    Volume="$(amixer -D pulse get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
     if test "$Volume" -gt 0
     then
 	echo -e "\uFA7D ${Volume}"
