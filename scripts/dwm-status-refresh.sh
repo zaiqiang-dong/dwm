@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_volume() {
-    Volume="$(amixer -D pulse get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    Volume="$(amixer -D pulse  get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
     if test "$Volume" -gt 0
     then
 	echo -e "\uFA7D ${Volume}"
@@ -54,7 +54,8 @@ get_wireless_signal_strengh() {
         echo -e "\ufb09 -"$signal_strengh
     else
         connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
-        if [ "$connection" == "yes" ]; then
+        connection=${connection##*\ }
+        if [ "$connection" == "no" ]; then
             connection=`echo -e "\uF65A"`
         else
             connection=`echo -e "\uFBF1"`
