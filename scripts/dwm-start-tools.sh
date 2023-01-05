@@ -7,4 +7,3 @@ blueman-tray
 fcitx5 &
 PigchaProxy &
 google-chrome &
-xscreensaver &
