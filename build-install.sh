@@ -9,7 +9,6 @@ cp ./xprofile ~/.xprofile
 cp ./b.jpg ~/.config/b.jpg
 cp ./picom-config ~/.config/picom-config
 cp ./xbindkeysrc ~/.xbindkeysrc
-cp ./xscreensaver ~/.xscreensaver
 rm -rf config.h
 sudo cp ./dwm.desktop /usr/share/xsessions/
 make clean
