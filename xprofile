@@ -3,4 +3,5 @@ xset s off
 xset s noexpose
 xset s noblank
 xset dpms 0 0 0
-xautolock -time 30 -locker dwm-lock &
+xscreensaver &
+
