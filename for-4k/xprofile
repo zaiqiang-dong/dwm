@@ -3,7 +3,6 @@ xset s off
 xset s noexpose
 xset s noblank
 xset dpms 0 0 0
-xscreensaver &
 if xrandr --query | grep '^DP-1 connected'; then
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
     xrdb -merge ~/.config/Xresources

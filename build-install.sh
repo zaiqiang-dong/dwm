@@ -6,7 +6,7 @@ mkdir ~/.config/scripts/
 cp ./scripts/* ~/.config/scripts/
 sudo cp ./dwm-lock.sh /usr/bin/dwm-lock
 cp ./xprofile ~/.xprofile
-cp ./xscreensaver ~/.xscreensaver
+#cp ./xscreensaver ~/.xscreensaver
 cp ./b.jpg ~/.config/b.jpg
 cp ./picom-config ~/.config/picom-config
 cp ./xbindkeysrc ~/.xbindkeysrc
