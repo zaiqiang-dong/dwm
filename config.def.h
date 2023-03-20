@@ -33,12 +33,17 @@ static const char *colors[][3]      = {
 static const char *tags[] = {"1","2","3","4","5","6"};
 
 static const Rule rules[] = {
+    /*
+     * 这里仅仅是定义某个程序跑在那里，并不能真正的启动一个程序
+     * 启动程序在scripts/dwm-start-tools.sh里配置
+     */
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor */
 	{ "PigchaProxy",    NULL,       NULL,       1 << 5,       0,           0 },
+	{ "D-Chat",         NULL,       NULL,       1 << 5,       0,           0 },
 	{ "Google-chrome",  NULL,       NULL,       1 << 4,       0,           0 },
 };
 
