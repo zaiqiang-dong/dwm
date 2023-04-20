@@ -13,8 +13,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
 /* "WenQuanYi Micro Hei:size=12:style=Bold" */
 static const char *fonts[]          = {
-                                        "Noto Sans CJK HK:style=Bold:size=13",
-                                        "Hack Nerd Font Mono:style=Bold:size=14",
+                                        "JetBrains Mono NL:style=Bold:size=13",
+                                        "Hack Nerd Font Mono:style=Bold:size=16",
                                         "Symbola:style=Regular:size=14",
                                        };
 static const char dmenufont[]       = "Hack Nerd Font Mono:size=13";
