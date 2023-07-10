@@ -14,10 +14,9 @@ static const int focusonwheel       = 0;
 /* "WenQuanYi Micro Hei:size=12:style=Bold" */
 static const char *fonts[]          = {
                                         "JetBrains Mono NL:style=Bold:size=13",
-                                        "Hack Nerd Font Mono:style=Bold:size=16",
-                                        "Symbola:style=Regular:size=14",
+                                        "JetBrainsMonoNL Nerd Font:size=13",
                                        };
-static const char dmenufont[]       = "Hack Nerd Font Mono:size=13";
+static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=13";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
