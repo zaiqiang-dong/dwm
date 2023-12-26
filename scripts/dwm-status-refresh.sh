@@ -12,7 +12,7 @@ print_volume() {
 
 print_mem(){
     memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
-    echo -e "\uF85A $memfree"
+    echo -e "󰬔 $memfree"
 }
 
 #load
@@ -20,7 +20,7 @@ print_mem(){
 dwm_loadavg () {
     lf=1,2,3
     la=$(cut -d " " -f ${lf} /proc/loadavg)
-    echo -e "\uFD2E $la"
+    echo -e "󰬊 $la"
 
 }
 
@@ -71,7 +71,7 @@ Week=$(date +"%V")
 let Week=Week+1
 Week_index=$(date +"%w")
 Time=$(date +"%T")
-DateTime=`echo -e "\uF073 $Date $Week+$Week_index \uFBAE $Time"`
+DateTime=`echo -e "󰸗 $Date $Week+$Week_index 󱎫 $Time"`
 echo "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status)  $(get_battery_combined_percent)"
 
 xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status)  $(get_battery_combined_percent)"
