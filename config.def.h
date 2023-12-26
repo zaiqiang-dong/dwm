@@ -11,11 +11,13 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
-/* "WenQuanYi Micro Hei:size=12:style=Bold" */
+
 static const char *fonts[]          = {
-                                        "JetBrains Mono NL:style=Bold:size=13",
-                                        "JetBrainsMonoNL Nerd Font:size=13",
-                                       };
+    "JetBrains Mono NL:style=Bold:size=13",
+    "JetBrainsMonoNL Nerd Font:size=13",
+    "Alibaba PuHuiTi 3.0,阿里巴巴普惠体 3.0,Alibaba PuHuiTi 3.0 105 Heavy,阿里巴巴普惠体 3.0 105 Heavy:style=105 Heavy,Regular",
+};
+
 static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=13";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
