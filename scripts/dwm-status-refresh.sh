@@ -41,7 +41,7 @@ get_battery_charging_status() {
 
 	if $(acpi -b | grep --quiet Discharging)
 	then
-        echo -e "🔋"
+        echo "🔋 "$(get_battery_combined_percent)
 	else # acpi can give Unknown or Charging if charging, https://unix.stackexchange.com/questions/203741/lenovo-t440s-battery-status-unknown-but-charging
 		echo -e "🔌";
 	fi
@@ -56,9 +56,9 @@ get_wireless_signal_strengh() {
         connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
         connection=${connection##*\ }
         if [ "$connection" == "no" ]; then
-            connection=`echo -e ""`
+            connection=""
         else
-            connection=`echo -e "🪐"`
+            connection="🪐"
         fi
         echo $connection
     # fi
@@ -73,5 +73,5 @@ Week_index=$(date +"%w")
 Time=$(date +"%T")
 DateTime=`echo -e "📆 $Date $Week+$Week_index ⏰ $Time"`
 
-xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status)  $(get_battery_combined_percent)"
+xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status) "
 
