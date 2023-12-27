@@ -15,6 +15,7 @@ static const int focusonwheel       = 0;
 static const char *fonts[]          = {
     "JetBrains Mono NL:style=Bold:size=13",
     "Noto Color Emoji:style=Regular:size=11",
+    "JetBrainsMonoNL Nerd Font:size=13",
     "Alibaba PuHuiTi 3.0,阿里巴巴普惠体 3.0,Alibaba PuHuiTi 3.0 105 Heavy,阿里巴巴普惠体 3.0 105 Heavy:style=105 Heavy,Regular",
 };
 
