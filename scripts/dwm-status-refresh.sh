@@ -4,9 +4,9 @@ print_volume() {
     Volume="$(amixer -D pulse  get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
     if test "$Volume" -gt 0
     then
-	echo -e "📢 ${Volume}"
+	echo -e "🔊 ${Volume}"
     else
-	echo -e "📢 Mute"
+	echo -e "🔊 Mute"
     fi
 }
 
@@ -56,9 +56,9 @@ get_wireless_signal_strengh() {
         connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
         connection=${connection##*\ }
         if [ "$connection" == "no" ]; then
-            connection=`echo -e "\uF65A"`
+            connection=`echo -e "🪐"`
         else
-            connection=`echo -e "\uFBF1"`
+            connection=`echo -e "🪐"`
         fi
         echo $connection
     fi
