@@ -4,15 +4,15 @@ print_volume() {
     Volume="$(amixer -D pulse  get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
     if test "$Volume" -gt 0
     then
-	echo -e "🔈 ${Volume}"
+	echo -e "🌈 ${Volume}"
     else
-	echo -e "🔈 Mute"
+	echo -e "🌈 Mute"
     fi
 }
 
 print_mem(){
     memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
-    echo -e "🐢 $memfree"
+    echo -e "🍁 $memfree"
 }
 
 #load
@@ -20,7 +20,7 @@ print_mem(){
 dwm_loadavg () {
     lf=1,2,3
     la=$(cut -d " " -f ${lf} /proc/loadavg)
-    echo -e "🦜 $la"
+    echo -e "🔥 $la"
 
 }
 
@@ -68,7 +68,7 @@ get_wireless_signal_strengh() {
 # datetime
 Date=$(date +"%Y-%m-%d" )
 Week=$(date +"%V")
-let Week=Week+1
+let Week=Week
 Week_index=$(date +"%w")
 Time=$(date +"%T")
 DateTime=`echo -e "📆 $Date $Week+$Week_index ⏰ $Time"`
