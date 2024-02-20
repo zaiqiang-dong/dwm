@@ -68,7 +68,6 @@ get_wireless_signal_strengh() {
 # datetime
 Date=$(date +"%Y-%m-%d" )
 Week=$(date +"%V")
-let Week=Week
 Week_index=$(date +"%w")
 Time=$(date +"%T")
 DateTime=`echo -e "📆 $Date $Week+$Week_index ⏰ $Time"`
