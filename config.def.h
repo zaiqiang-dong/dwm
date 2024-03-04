@@ -11,7 +11,12 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
+
+#ifdef IS_4K
+static const unsigned int systrayiconsize = 40;
+#else
 static const unsigned int systrayiconsize = 20;
+#endif // IS_4K
 
 static const char *fonts[]          = {
     "JetBrains Mono NL:style=Bold:size=13",

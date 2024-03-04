@@ -2,7 +2,13 @@
 rm -rf config.h
 rm *.rej
 rm *.orig
-sudo make clean install
+is4k=$(xrandr | grep "3840x2160")
+
+if [[ $is4k != "" ]];then
+    sudo make clean install ADD_MACRO='-DIS_4K'
+else
+    sudo make clean install
+fi
 mkdir ~/.config/scripts/
 cp ./scripts/* ~/.config/scripts/
 sudo cp ./dwm-lock.sh /usr/bin/dwm-lock
@@ -15,7 +21,6 @@ rm -rf config.h
 sudo cp ./dwm.desktop /usr/share/xsessions/
 make clean
 
-is4k=$(xrandr | grep "3840x2160")
 if [[ $is4k != "" ]];then
     echo "is 4k display."
     cd ./for-4k/
