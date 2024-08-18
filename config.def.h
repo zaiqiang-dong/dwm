@@ -92,9 +92,9 @@ static const char *shutdowncmd[]  = { "shutdown", "now", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ Mod1Mask,                     XK_minus,  spawn,          {.v = shutdowncmd} },
+	{ Mod4Mask,                     XK_minus,  spawn,          {.v = shutdowncmd} },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = flameshotcmd } },
-	{ Mod1Mask,                     XK_period, spawn,          {.v = slockcmd } },
+	{ Mod4Mask,                     XK_period, spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask,                     XK_x,      spawn,          {.v = vimtermcmd } },

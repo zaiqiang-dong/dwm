@@ -1,10 +1,12 @@
+# 使用xbindkeys --key可以生成组合键
+
 "amixer -D pulse set Master 1%+;alsactl --file ~/.config/asound.state store"
-    m:0x0 + c:123
-    F3
+    m:0x40 + c:38
+    Mod4 + a
 "amixer -D pulse set Master 1%-;alsactl --file ~/.config/asound.state store"
-    m:0x0 + c:122
-    F2
+    m:0x40 + c:39
+    Mod4 + s
 "amixer -D pulse set Master 0%;"
-    m:0x0 + c:121
-    F1
+    m:0x40 + c:40
+    Mod4 + d
 
