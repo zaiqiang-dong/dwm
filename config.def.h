@@ -49,11 +49,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class            instance    title       tags mask     isfloating   monitor */
-	{ "PigchaProxy",    NULL,       NULL,       1 << 5,       0,           0 },
-	{ "D-Chat",         NULL,       NULL,       1 << 5,       0,           0 },
-	{ "Google-chrome",  NULL,       NULL,       1 << 4,       0,           0 },
-	{ "scrcpy",         NULL,       NULL,       1 << 5,       0,           1 },
+	/* class                        instance    title       tags mask     isfloating   monitor */
+	{ "PigchaProxy",                NULL,       NULL,       1 << 5,       0,           0 },
+	{ "feishu",                     NULL,       NULL,       1 << 5,       0,           0 },
+	{ "Google-chrome",              NULL,       NULL,       1 << 4,       0,           0 },
+	{ "scrcpy",                     NULL,       NULL,       1 << 5,       0,           1 },
 };
 
 /* layout(s) */
