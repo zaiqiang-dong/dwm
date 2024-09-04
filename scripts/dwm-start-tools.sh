@@ -7,4 +7,4 @@ blueman-tray
 fcitx5 &
 PigchaProxy &
 bytedance-feishu-stable &
-google-chrome-stable --proxy-server="http://127.0.0.1:15732" &
+google-chrome-stable &
