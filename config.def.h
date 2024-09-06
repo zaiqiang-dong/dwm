@@ -38,7 +38,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = {"1","2","3","4","5","6"};
+static const char *tags[] = {"1","2","3","4","5","6","󰈺"};
 
 static const Rule rules[] = {
     /*
@@ -50,7 +50,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                        instance    title       tags mask     isfloating   monitor */
-	{ "PigchaProxy",                NULL,       NULL,       1 << 5,       0,           0 },
+	{ "Clash-verge",                NULL,       NULL,       1 << 6,       0,           0 },
 	{ "feishu",                     NULL,       NULL,       1 << 5,       0,           0 },
 	{ "Google-chrome",              NULL,       NULL,       1 << 4,       0,           0 },
 	{ "scrcpy",                     NULL,       NULL,       1 << 5,       0,           1 },
