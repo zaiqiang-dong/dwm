@@ -56,9 +56,9 @@ get_wireless_signal_strengh() {
         connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
         connection=${connection##*\ }
         if [ "$connection" == "no" ]; then
-            connection=""
+            connection="󰅛"
         else
-            connection="🪐"
+            connection="🚀"
         fi
         echo $connection
     # fi
