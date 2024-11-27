@@ -64,6 +64,11 @@ get_wireless_signal_strengh() {
     # fi
 }
 
+get_ble_dev_bp() {
+    bp=$(bluetoothctl info F5:3B:A3:BC:33:CA | grep "Battery Percentage" | tail -1 | cut -d'(' -f2 | cut -d')' -f1)
+    echo $bp
+}
+
 
 # datetime
 Date=$(date +"%Y-%m-%d" )
@@ -72,5 +77,5 @@ Week_index=$(date +"%w")
 Time=$(date +"%T")
 DateTime=`echo -e "📆 $Date $Week+$Week_index ⏰ $Time"`
 
-xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status) "
+xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status) $(get_ble_dev_bp)"
 
