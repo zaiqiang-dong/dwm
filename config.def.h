@@ -53,7 +53,7 @@ static const Rule rules[] = {
 	{ "Clash-verge",                NULL,       NULL,       1 << 6,       0,           0 },
 	{ "feishu",                     NULL,       NULL,       1 << 5,       0,           0 },
 	{ "Google-chrome",              NULL,       NULL,       1 << 4,       0,           0 },
-	{ "scrcpy",                     NULL,       NULL,       1 << 5,       0,           1 },
+	{ "scrcpy",                     NULL,       NULL,       1 << 6,       0,           1 },
 };
 
 /* layout(s) */
@@ -84,6 +84,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-no-lazy-grab", "-show" , "drun", "-modi", "run,drun,window", "-theme", "~/.config/rofi/theme/style_7.rasi", NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char *vimtermcmd[] = {"st", "vim", "+terminal", "-c", "startinsert", NULL};
+static const char *neovidetermcmd[] = {"neovide", "--", "+terminal", "-c", "startinsert", NULL};
 //static const char *slockcmd[]  = { "slock", NULL };
 //static const char *slockcmd[]  = { "i3lock", "-c", "000000", "-e", "&&", "xset", "dpms", "force", "off", NULL};
 static const char *slockcmd[]  = { "dwm-lock", NULL };
@@ -98,6 +99,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = vimtermcmd } },
 	{ Mod1Mask,                     XK_x,      spawn,          {.v = termcmd } },
+	{ Mod1Mask,                     XK_k,      spawn,          {.v = neovidetermcmd } },
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
