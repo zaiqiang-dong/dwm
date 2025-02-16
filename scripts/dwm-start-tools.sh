@@ -8,5 +8,5 @@ blueman-applet &
 fcitx5 &
 clash-verge &
 bytedance-feishu-stable &
-#google-chrome-stable --proxy-server="http://127.0.0.1:15732"
+#google-chrome-stable --proxy-server="http://127.0.0.1:7897"
 google-chrome-stable &
