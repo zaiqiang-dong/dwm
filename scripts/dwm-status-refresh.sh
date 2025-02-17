@@ -39,13 +39,11 @@ get_battery_combined_percent() {
 get_battery_charging_status() {
 
     batt_info=$(acpi -b)
-    if [[ $batt_info =~ "No support for device type" ]]; then
+    if [[ $batt_info == "" ]]; then
         echo -e "🔌"
-    fi
-    if [[ $batt_info =~ "Charging" ]]; then
+    elif [[ $batt_info =~ "Charging" ]]; then
         echo -e "🔌"
-    fi
-    if [[ $batt_info =~ "Discharging" ]]; then
+    elif [[ $batt_info =~ "Discharging" ]]; then
         echo "🔋 "$(get_battery_combined_percent)
     fi
 }
