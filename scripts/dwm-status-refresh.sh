@@ -1,23 +1,22 @@
 #!/bin/bash
 
 print_volume() {
-    Volume="$(amixer -D pulse  get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-    if test "$Volume" -gt 0
-    then
-	echo -e "🌈 ${Volume}"
+    Volume="$(amixer -D pulse get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    if test "$Volume" -gt 0; then
+        echo -e "🌈 ${Volume}"
     else
-	echo -e "🌈 Mute"
+        echo -e "🌈 Mute"
     fi
 }
 
-print_mem(){
+print_mem() {
     memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
     echo -e "🍁 $memfree"
 }
 
 #load
 
-dwm_loadavg () {
+dwm_loadavg() {
     lf=1,2,3
     la=$(cut -d " " -f ${lf} /proc/loadavg)
     echo -e "🔥 $la"
@@ -26,25 +25,29 @@ dwm_loadavg () {
 
 get_battery_combined_percent() {
 
-	# get charge of all batteries, combine them
-	total_charge=$(expr $(acpi -b | awk '{print $4}' | grep -Eo "[0-9]+" | paste -sd+ | bc));
+    # get charge of all batteries, combine them
+    total_charge=$(expr $(acpi -b | awk '{print $4}' | grep -Eo "[0-9]+" | paste -sd+ | bc))
 
-	# get amount of batteries in the device
-	battery_number=$(acpi -b | wc -l);
+    # get amount of batteries in the device
+    battery_number=$(acpi -b | wc -l)
 
-	percent=$(expr $total_charge / $battery_number);
+    percent=$(expr $total_charge / $battery_number)
 
-	echo $percent;
+    echo $percent
 }
 
 get_battery_charging_status() {
 
-	if $(acpi -b | grep --quiet unavailable)
-	then
-		echo -e "🔌";
-	else # acpi can give Unknown or Charging if charging, https://unix.stackexchange.com/questions/203741/lenovo-t440s-battery-status-unknown-but-charging
-        echo "🔋 "$(get_battery_combined_percent)
-	fi
+    battery_info=$(acpi -b | grep Charging)
+    if [[ $? != 0 ]]; then
+        echo -e "🔌"
+    else
+        if [[ battery_info == "" ]]; then
+            echo -e "🔌"
+        else
+            echo "🔋 "$(get_battery_combined_percent)
+        fi
+    fi
 }
 
 get_wireless_signal_strengh() {
@@ -53,14 +56,14 @@ get_wireless_signal_strengh() {
     #     signal_strengh=$(cat /proc/net/wireless |tail -1 | tr -s " " | cut -d' ' -f4 | tr -cd "[0-9]")
     #     echo -e "📡 -"$signal_strengh
     # else
-        connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
-        connection=${connection##*\ }
-        if [ "$connection" == "no" ]; then
-            connection="󰅛"
-        else
-            connection="🚀"
-        fi
-        echo $connection
+    connection=$(ping www.baidu.com -c 1 && echo "yes" || echo "no")
+    connection=${connection##*\ }
+    if [ "$connection" == "no" ]; then
+        connection="󰅛"
+    else
+        connection="🚀"
+    fi
+    echo $connection
     # fi
 }
 
@@ -69,13 +72,11 @@ get_ble_dev_bp() {
     echo $bp
 }
 
-
 # datetime
-Date=$(date +"%Y-%m-%d" )
+Date=$(date +"%Y-%m-%d")
 Week=$(date +"%V")
 Week_index=$(date +"%w")
 Time=$(date +"%T")
-DateTime=`echo -e "📆 $Date $Week+$Week_index ⏰ $Time"`
+DateTime=$(echo -e "📆 $Date $Week+$Week_index ⏰ $Time")
 
 xsetroot -name "$(dwm_loadavg)  $(print_mem)  $(print_volume)  $(get_wireless_signal_strengh)  $DateTime  $(get_battery_charging_status) $(get_ble_dev_bp)"
-
