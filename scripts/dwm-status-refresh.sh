@@ -43,9 +43,9 @@ get_battery_charging_status() {
         echo -e "🔌"
     else
         if [[ battery_info == "" ]]; then
-            echo -e "🔌"
-        else
             echo "🔋 "$(get_battery_combined_percent)
+        else
+            echo -e "🔌"
         fi
     fi
 }
