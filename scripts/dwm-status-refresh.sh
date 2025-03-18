@@ -41,7 +41,7 @@ get_battery_charging_status() {
     batt_info=$(acpi -b)
     if [[ $batt_info =~ "unavailable" ]]; then
         echo -e "🔌"
-    elif [[ $batt_info =~ "Charging" ]]; then
+    elif [[ $batt_info =~ "Charging" || $batt_info =~ "charging" ]]; then
         echo -e "🔌"
     elif [[ $batt_info =~ "Discharging" ]]; then
         echo "🔋 "$(get_battery_combined_percent)
