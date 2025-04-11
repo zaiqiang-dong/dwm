@@ -14,16 +14,22 @@ static const int focusonwheel       = 0;
 
 #ifdef IS_4K
 static const unsigned int systrayiconsize = 40;
+static const char *fonts[]          = {
+    "JetBrains Mono NL:style=Bold:size=16",
+    "Noto Color Emoji:style=Regular:size=12",
+    "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
+    "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=14",
+};
 #else
 static const unsigned int systrayiconsize = 20;
-#endif // IS_4K
-
 static const char *fonts[]          = {
     "JetBrains Mono NL:style=Bold:size=13",
     "Noto Color Emoji:style=Regular:size=10",
     "JetBrainsMonoNL Nerd Font:sytle=Bold:size=13",
     "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=12",
 };
+#endif // IS_4K
+
 
 static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=13";
 static const char col_gray1[]       = "#1c1c1c";

@@ -1,3 +1,3 @@
 #!/bin/bash
-cp ./Xresources ~/.config/
+# cp ./Xresources ~/.config/
 cp ./xprofile ~/.xprofile

@@ -6,6 +6,4 @@ xset dpms 0 0 0
 export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-xrdb -merge ~/.config/Xresources
-# xrandr --output DP-0 --mode 3840x2160 --primary --output DP-2 --right-of DP-0 --mode 3840x2160
+export GDK_SCALE=2
