@@ -4,8 +4,9 @@ feh --bg-scale /home/$USER/.config/b.jpg
 picom -b --config=/home/zaiqdong/.config/picom-config
 alsactl --file ~/.config/asound.state restore
 xbindkeys
-copyq &
+# copyq &
 # blueman-tray
+./dwm-sync-clipboard.sh &
 blueman-applet &
 fcitx5 &
 clash-verge &
