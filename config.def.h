@@ -34,7 +34,7 @@ static const char *fonts[]          = {
 static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=13";
 static const char col_gray1[]       = "#1c1c1c";
 static const char col_gray2[]       = "#1c1c1c";
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#949494";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#239B56";
 static const char *colors[][3]      = {
