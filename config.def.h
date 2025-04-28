@@ -14,7 +14,13 @@ static const int focusonwheel       = 0;
 
 #ifdef IS_4K
 static const unsigned int systrayiconsize = 40;
-static const char *fonts[]          = {
+static const char *fonts[] = {
+    /*
+     * "JetBrains Mono NL:style=Bold:size=24",
+     * "Noto Color Emoji:style=Regular:size=20",
+     * "JetBrainsMonoNL Nerd Font:style=Bold:size=24",
+     * "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=22",
+     */
     "JetBrains Mono NL:style=Bold:size=16",
     "Noto Color Emoji:style=Regular:size=12",
     "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
