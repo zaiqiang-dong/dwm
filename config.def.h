@@ -19,12 +19,10 @@ static const char *fonts[] = {
     "JetBrains Mono NL:style=Bold:size=26",
     "Noto Color Emoji:style=Regular:size=20",
     "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=26",
-    /*
-     * "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=16",
-     * "JetBrains Mono NL:style=Bold:size=16",
-     * "Noto Color Emoji:style=Regular:size=12",
-     * "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
-     */
+    // "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
+    // "JetBrains Mono NL:style=Bold:size=16",
+    // "Noto Color Emoji:style=Regular:size=12",
+    // "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=16",
 };
 #else
 static const unsigned int systrayiconsize = 20;
