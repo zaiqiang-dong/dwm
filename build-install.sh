@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
+
+RED='\033[0;31m'
+NO_COLOR='\033[0m'
+
 rm -rf config.h
 rm *.rej
 rm *.orig
-is4k=$(xrandr | grep "3840x2160")
 
-if [[ $is4k != "" ]];then
-    sudo make clean install ADD_MACRO='-DIS_4K'
-else
-    sudo make clean install
+if [[ $# -eq 0 ]]; then
+    echo >&2 -e "[${RED}ERROR${NO_COLOR}] need set monitor inof [IS_24_4K|IS_27_4K|DEFAULT]"
+    exit
 fi
+sudo make clean install ADD_MACRO='-D'$1
+
 mkdir ~/.config/scripts/
 cp ./scripts/* ~/.config/scripts/
 sudo cp ./dwm-lock.sh /usr/bin/dwm-lock

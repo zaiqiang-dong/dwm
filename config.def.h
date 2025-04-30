@@ -12,19 +12,30 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
 
-#ifdef IS_4K
+#if IS_24_4K /* ------------------------------------------------- */
+
 static const unsigned int systrayiconsize = 40;
 static const char *fonts[] = {
     "JetBrainsMonoNL Nerd Font:style=Bold:size=26",
     "JetBrains Mono NL:style=Bold:size=26",
     "Noto Color Emoji:style=Regular:size=20",
     "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=26",
-    // "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
-    // "JetBrains Mono NL:style=Bold:size=16",
-    // "Noto Color Emoji:style=Regular:size=12",
-    // "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=16",
 };
-#else
+static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=26";
+
+#elif IS_27_4K /* ------------------------------------------------- */
+
+static const unsigned int systrayiconsize = 40;
+static const char *fonts[] = {
+    "JetBrainsMonoNL Nerd Font:sytle=Bold:size=16",
+    "JetBrains Mono NL:style=Bold:size=16",
+    "Noto Color Emoji:style=Regular:size=12",
+    "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=16",
+};
+static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=16";
+
+#else /* ------------------------------------------------- */
+
 static const unsigned int systrayiconsize = 20;
 static const char *fonts[]          = {
     "JetBrains Mono NL:style=Bold:size=13",
@@ -32,10 +43,11 @@ static const char *fonts[]          = {
     "JetBrainsMonoNL Nerd Font:sytle=Bold:size=13",
     "Alibaba PuHuiTi 3.0 105 Heavy:style=105 Heavy,Regular:size=12",
 };
-#endif // IS_4K
-
-
 static const char dmenufont[]       = "JetBrainsMonoNL Nerd Font:size=13";
+
+#endif
+
+
 static const char col_gray1[]       = "#1c1c1c";
 static const char col_gray2[]       = "#1c1c1c";
 static const char col_gray3[]       = "#949494";
