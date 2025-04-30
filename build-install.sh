@@ -25,7 +25,7 @@ rm -rf config.h
 sudo cp ./dwm.desktop /usr/share/xsessions/
 make clean
 
-if [[ $is4k != "" ]];then
+if [[ $1 =~ "_4K" ]];then
     echo "is 4k display."
     cd ./for-4k/
     ./config4k.sh
